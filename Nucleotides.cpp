@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
     string filename = argv[1];
     char response = '?'; //Initializing do while condition
     do {
-        if(response == 'y') {
+        if(response == 'y') { //This means that it is not the first iteration of the loop, since in the first iteration response is ?, but for all future iterations it's y
             cout << "What is the name of the file you'd like to open? " << endl;
             getline(cin, filename);
         }
@@ -170,6 +170,10 @@ int main(int argc, char** argv) {
         double GGProbability = numBigrams > 0 ? GGCount / (double)numBigrams : 0;
         ofstream os; //http://www.cplusplus.com/reference/fstream/ofstream/
         os.open("nicholasmirchandani.out", ofstream::out | ofstream::trunc);
+        os << "Name: Nicholas Mirchandani" << endl;
+        os << "Student ID: 2317024" << endl;
+        os << "Email: nmirchandani@chapman.edu" << endl;
+        os << "Class: CPSC 350-02" << endl;
         os << "Sum of Line Lengths: " << sumLengths << endl;
         os << "Mean of Line Lengths: " << meanLength << endl;
         os << "Variance of Line Lengths: " << variance << endl;
