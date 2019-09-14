@@ -238,8 +238,8 @@ int main(int argc, char** argv) {
         }
         os.close();
         cout << "Would you like to process another file?  (y/n) ";
-        response = getCharFromUser();
-    } while (tolower(response) == 'y');
+        response = tolower(getCharFromUser());
+    } while (response == 'y');
     return 0;
 }
 
