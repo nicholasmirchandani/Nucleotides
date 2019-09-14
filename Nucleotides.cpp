@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
         if(is.fail()) {
             cout << "File '" + filename + "' could not be opened." << endl;
             cout << "Would you like to process another file?  (y/n) ";
-            response = getCharFromUser();
+            response = tolower(getCharFromUser());
             continue;
         }
         //Initializing all counts
