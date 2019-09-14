@@ -169,11 +169,16 @@ int main(int argc, char** argv) {
         double GTProbability = numBigrams > 0 ? GTCount / (double)numBigrams : 0;
         double GGProbability = numBigrams > 0 ? GGCount / (double)numBigrams : 0;
         ofstream os; //http://www.cplusplus.com/reference/fstream/ofstream/
-        os.open("nicholasmirchandani.out", ofstream::out | ofstream::trunc);
+        if(response == 'y') { //Append to the output file if this is not the first loop running the program, override otherwise.
+            os.open("nicholasmirchandani.out", ofstream::out | ofstream::app);
+        } else {
+            os.open("nicholasmirchandani.out", ofstream::out | ofstream::trunc);
+        }
         os << "Name: Nicholas Mirchandani" << endl;
         os << "Student ID: 2317024" << endl;
         os << "Email: nmirchandani@chapman.edu" << endl;
         os << "Class: CPSC 350-02" << endl;
+        os << "File Name: " << filename << endl;
         os << "Sum of Line Lengths: " << sumLengths << endl;
         os << "Mean of Line Lengths: " << meanLength << endl;
         os << "Variance of Line Lengths: " << variance << endl;
